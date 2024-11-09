@@ -44,7 +44,7 @@ const Slider: React.FC<SliderProps> = ({
     const activeElement = items[active] as HTMLElement;
     activeElement.style.transform = "hidden";
     activeElement.style.zIndex = "1";
-    activeElement.style.backgroundColor = "#EDFCFF";
+    activeElement.style.backgroundColor = "#FFFFFF";
     activeElement.classList.add("active");
     activeElement.style.opacity = "1";
 
@@ -55,19 +55,13 @@ const Slider: React.FC<SliderProps> = ({
         const stt = index + 1;
         switch (true) {
           case isMobile:
-            element.style.transform = `translateX(${30 * stt}px) scale(${
-              1 - 0.09 * stt
-            })`;
+            element.style.transform = `translateY(-50%) translateX(${39 * stt}px) scale(0.92)`;
             break;
           case isTablet:
-            element.style.transform = `translateX(${50 * stt}px) scale(${
-              1 - 0.09 * stt
-            })`;
+            element.style.transform = `translateY(-50%) translateX(${50 * stt}px) scale(0.92)`;
             break;
           default:
-            element.style.transform = `translateX(${120 * stt}px) scale(${
-              1 - 0.09 * stt
-            })`;
+            element.style.transform = `translateY(-50%) translateX(${110 * stt}px) scale(0.92)`;
             break;
         }
 
@@ -85,19 +79,13 @@ const Slider: React.FC<SliderProps> = ({
         const stt = index + 1;
         switch (true) {
           case isMobile:
-            element.style.transform = `translateX(${-30 * stt}px) scale(${
-              1 - 0.09 * stt
-            })`;
+            element.style.transform = `translateY(-50%) translateX(${-39 * stt}px) scale(0.92)`;
             break;
           case isTablet:
-            element.style.transform = `translateX(${-50 * stt}px) scale(${
-              1 - 0.09 * stt
-            })`;
+            element.style.transform = `translateY(-50%) translateX(${-50 * stt}px) scale(0.92)`;
             break;
           default:
-            element.style.transform = `translateX(${-120 * stt}px) scale(${
-              1 - 0.09 * stt
-            })`;
+            element.style.transform = `translateY(-50%) translateX(${-110 * stt}px) scale(0.92)`;
             break;
         }
 
@@ -164,7 +152,7 @@ const Slider: React.FC<SliderProps> = ({
             />
           </div>
         ))}
-        <Button id="next" classnames="md:block hidden" onClick={nextSlide}>
+        <Button id="next" onClick={nextSlide}>
           <svg fill="#ffffff" height="32px" width="32px" viewBox="0 0 330 330">
             <path
               d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 
@@ -174,7 +162,7 @@ const Slider: React.FC<SliderProps> = ({
             />
           </svg>
         </Button>
-        <Button id="prev" classnames="md:block hidden" onClick={prevSlide}>
+        <Button id="prev" onClick={prevSlide}>
           <svg
             fill="#ffffff"
             height="32px"

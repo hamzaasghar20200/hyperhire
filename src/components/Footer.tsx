@@ -50,7 +50,7 @@ const Footer = () => {
           <div className="col-12 col-md-8 p-0">
             <div className="row mt-3 footer-info mx-0 px-0">
               {data?.map((item) => (
-                <div className="col-lg-3 col-6 px-2 mb-3" key={item?.id}>
+                <div className="col-lg-3  col-6 px-2 mb-3" key={item?.id}>
                   <div className="card border-0">
                     <div className="card-body footer-info-card pe-1">
                       <Image

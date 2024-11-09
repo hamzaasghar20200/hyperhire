@@ -2,29 +2,34 @@
 .slider {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 555px;
+  overflow: hidden;
+  padding: 0 47px;
 }
 .item {
+  max-width:292px;
+  width: 100%;
   position: absolute;
   text-align: justify;
   background-color: #fff;
   border-radius: 10px;
-  transition: 0.5s;
-  left: calc(50% - 110px);
-  top: 0;
+  transition: 0.4s;
+  left: calc(50% - 145px);
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 #next {
-  position: absolute;
-  right: -68px;
-  top: 40%;
+  right: 0;
 }
 #prev {
-  position: absolute;
   left: 0px;
-  top: 40%;
 }
-#prev,
-#next {
+#prev, #next {
+  position: absolute;
   color: #fff;
   background: none;
   border: none;
@@ -33,6 +38,8 @@
   font-weight: bold;
   opacity: 1;
   transition: opacity 0.5s;
+  top: 50%;
+  transform: translateY(-50%);
 }
 #prev:hover,
 #next:hover {
@@ -52,10 +59,13 @@
 }
 @media screen and (max-width: 767px) {
   #next {
-    right: 0px;
+    right: -5px;
+  }
+  #prev {
+    left: -5px;
   }
   .item {
-    left: calc(50% - 144px);
-    top: 100px;
+    left: calc(50% - 116px);
+    max-width: 234px;
   }
 }

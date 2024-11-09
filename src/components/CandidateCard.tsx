@@ -21,7 +21,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({
   tooltip,
 }) => {
   return (
-    <div className="card candidate-card shadow-sm text-center">
+    <div className="card w-full border-0 candidate-card bg-transparent text-center">
       {tooltip && (
         <div className="relative inline-block">
           <Tooltip

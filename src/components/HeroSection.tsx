@@ -126,7 +126,7 @@ const HeroSection: React.FC = () => {
               </ul>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6  p-md-0">
             <Slider />
           </div>
           <div className="md:hidden block">
