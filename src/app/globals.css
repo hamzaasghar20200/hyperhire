@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "flickity/css/flickity.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins";
+}
+.main-section {
+  background: linear-gradient(151.17deg, #26c2b9 8.69%, #288be7 126.06%);
+  color: #ffffff;
+}
+.hero-section {
+  margin: 100px 0px;
+}
+.hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 62.4px;
+  text-align: left;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 34px;
+  text-align: left;
+  color: #ffffffe5;
+}
+.content {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 27px;
+  text-align: left;
+  text-decoration: underline;
+}
+.candidate-card {
+  width: 18rem;
+  margin: 0 auto;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.candidate-card:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+.btn-font-md {
+  padding: 6px 24px 6px 24px !important;
+  border-radius: 8px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.card-title {
+  font-size: 24px !important;
+  font-weight: 900;
+  line-height: 36px;
+  text-align: center;
+}
+.card-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #4a77ff !important;
+}
+.btn-tags {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  border: 1px solid #c1c5cf;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #5e626f;
+  padding: 4px 12px 4px 12px;
+  margin-bottom: 5px;
+}
+
+/*Slider*/
+.candidate-slider .flickity-button {
+  background: transparent !important;
+}
+.candidate-slider .flickity-button:hover {
+  background: transparent;
+  color: black;
+}
+.candidate-slider .flickity-viewport {
+  height: 550px !important;
+}
+.candidate-slider .flickity-prev-next-button {
+  width: 50px;
+  height: 50px;
+}
+.candidate-slider .flickity-button-icon {
+  fill: white;
+}
+.candidate-slider .flickity-button:disabled {
+  display: none;
+}
+
+.candidate-slider .carousel {
+  margin: auto;
+  max-width: 680px;
+  min-height: 550px;
+  padding: 30px 0px;
+}
+.candidate-slider .carousel-cell {
+  margin-top: 35px;
+  max-width: max-content;
+  width: 100%;
+  border-radius: 15px;
+  counter-increment: carousel-cell;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+  background: #b9b9b9;
+  filter: blur(1px);
+}
+.candidate-slider .carousel-cell.is-selected {
+  filter: blur(0);
+  opacity: 1;
+  background: white;
+  transform: scale(1.1);
+  box-shadow: 0px 15px 24px 0px #0000001f;
+  z-index: 1231231;
+}
+
+/* name */
+.candidate-slider .carousel-cell .n {
+  font-size: 18px;
+  margin-top: 15px;
+  text-align: center;
+  color: black;
+  counter-increment: carousel-cell;
+}
+
+/* button */
+.candidate-slider .carousel-cell .b {
+  cursor: pointer;
+  margin: auto;
+  width: 180px;
+  padding: 1px;
+  background: green;
+  border: 1px solid green;
+  border-radius: 15px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  counter-increment: carousel-cell;
+  transition: all 0.3s ease;
+}
+
+/* picture */
+.candidate-slider .carousel-cell .p {
+  border-radius: 15px;
+  width: 201px;
+  height: 250px;
+  counter-increment: carousel-cell;
+}
+
+.candidate-slider .carousel-cell .b:hover {
+  background: #00e509;
+  transform: scale(1.03);
+  font-size: 16px;
+}
+
+.candidate-slider .carousel-cell .b:active {
+  background: white;
+  color: green;
+  transform: scale(0.9);
+  font-size: 16px;
+}
+
+.candidate-slider .carousel-cell .b-selected {
+  cursor: pointer;
+  margin: auto;
+  width: 180px;
+  padding: 1px;
+  background: white;
+  border: 1px solid green;
+  border-radius: 15px;
+  font-size: 15px;
+  color: green;
+  text-align: center;
+  counter-increment: carousel-cell;
+  transition: all 0.3s ease;
+}
+.list-heading {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 27px;
+  text-align: left;
+}
+.list-subheading {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 24px;
+  text-align: left;
+  color: #ffffffcc;
+  word-break: break-all;
+}
+
+.list {
+  position: relative;
+}
+.list::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 80%;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.list:nth-child(3) .list-subheading {
+  max-width: 80%;
+}
+
+.slider-btn {
+  min-width: 332px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  background: #ffffff33;
+  border: none !important;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 36px;
+  text-align: left;
+  color: #ffffff;
+}
+.slider-btn img {
+  margin-right: 15px;
+}
+.button-slider .carousel-cell {
+  margin-right: 10px;
+}
+.slider-settings {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  padding: 0 0px 0px 20px;
+}
+.slider-container {
+  width: 100%;
+  /* max-width: 1200px; */
+}
+.button-slider .flickity-slider {
+  left: 107px !important;
+}
+.info-title {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 21px;
+  text-align: left;
+}
+
+.footer-info button {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 21px;
+  text-align: left;
+  color: #5e626f;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+/* styles/globals.css */
+
+/* Font Size Classes */
+.font-10 {
+  font-size: 10px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-22 {
+  font-size: 22px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.font-26 {
+  font-size: 26px;
+}
+
+.font-28 {
+  font-size: 28px;
+}
+
+.font-30 {
+  font-size: 30px;
+}
+
+.footer-heading {
+  font-weight: 900;
+  line-height: 21px;
+  text-align: left;
+  color: #343741;
+}
+
+.footer-card-desc {
+  font-weight: 900;
+  line-height: 19.5px;
+  text-align: left;
+  color: #5e626f;
+}
+.footer-info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 138px;
+  height: 100%;
+}
+@media screen and (min-width: 1800px) {
+  .button-slider .flickity-slider {
+    left: 107px !important;
+  }
+}
+.tooltip-wrapper {
+  position: absolute;
+  top: -70px; /* Adjust as needed to ensure it’s above the card */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Ensure it’s above other elements */
+}
+
+@media screen and (max-width: 767px) {
+  .hero-title{
+    font-size: 36px;
+    max-width: 90%;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 80%;
+}
+}
