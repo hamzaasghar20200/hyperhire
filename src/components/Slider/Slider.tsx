@@ -11,10 +11,8 @@ interface SliderProps {
 
 const Slider: React.FC<SliderProps> = ({
   totalSlides = 8,
-  // autoSlideInterval = 3000,
+  autoSlideInterval = 3000,
 }) => {
-  const isMobile = window.innerWidth <= 768;
-  const isTablet =  window.innerWidth < 1080;
   const [active, setActive] = useState(1);
   const [touchStart, setTouchStart] = useState<number | null>(null);
 
@@ -22,17 +20,18 @@ const Slider: React.FC<SliderProps> = ({
     loadShow();
   }, [active]);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     nextSlide();
-  //   }, autoSlideInterval);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, autoSlideInterval);
 
-  //   return () => clearInterval(interval);
-  // }, [active, autoSlideInterval]);
+    return () => clearInterval(interval);
+  }, [active, autoSlideInterval]);
 
   const loadShow = () => {
     const items = document.querySelectorAll(".slider .item");
-
+    const isMobile = window.innerWidth <= 768;
+    const isTablet =  window.innerWidth < 1080;
     items.forEach((item) => {
       const element = item as HTMLElement;
       element.style.transform = "";
