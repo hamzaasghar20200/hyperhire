@@ -2,6 +2,7 @@
 import Carousel from "./CardSlider";
 import { Tooltip } from "./Tooltip";
 import Slider from "./Slider/Slider";
+import Image from "next/image";
 const data = [
   {
     id: 1,
@@ -64,7 +65,28 @@ const sliderData = [
     name: "캐드원(제도사)",
   },
 ];
-
+const informartion = [
+  {
+    id: 8297,
+    src: "/images/checkbox-icon.svg",
+    name: "한국어 능력",
+  },
+  {
+    id: 78623,
+    src: "/images/checkbox-icon.svg",
+    name: "업무 수행 능력",
+  },
+  {
+    id: 987,
+    src: "/images/checkbox-icon.svg",
+    name: "업무 수행 능력",
+  },
+  {
+    id: 90843,
+    src: "/images/checkbox-icon.svg",
+    name: "평판 조회",
+  },
+];
 const HeroSection: React.FC = () => {
   return (
     <section className="hero-section">
@@ -77,6 +99,7 @@ const HeroSection: React.FC = () => {
                 color="#40E2E8"
                 position={"top"}
                 icon=""
+                bgColor="bg-light-blue"
               />
               <h1 className="hero-title animate-fadeInUp">
                 최고의 실력을 가진
@@ -90,10 +113,10 @@ const HeroSection: React.FC = () => {
                   1주일 이내에 원격으로 채용해보세요.{" "}
                 </span>
               </p>
-              <p className="content md:block none mt-md-4 mb-md-5 my-3 animate-fadeInUp">
+              <p className="content md:block hidden mt-md-4 mb-md-5 my-3 animate-fadeInUp">
                 개발자가 필요하신가요?
               </p>
-              <ul className="list-unstyled md:flex none align-items-baseline gap-4 animate-fadeIn">
+              <ul className="list-unstyled md:flex hidden align-items-baseline gap-4 animate-fadeIn">
                 {data?.map((item) => (
                   <li key={item?.id} className="list">
                     <p className="list-heading mb-0">{item?.heading}</p>
@@ -106,13 +129,22 @@ const HeroSection: React.FC = () => {
           <div className="col-lg-6">
             <Slider />
           </div>
-
-          <p className="content md:none block mt-md-4 mb-md-5 my-3 animate-fadeInUp">
+          <div className="md:hidden block">
+            <ul className="list-unstyled information-list">
+              {informartion?.map((item) => (
+                <li key={item?.id} className="flex items-center gap-2 mb-2">
+                  <Image src={item?.src} width={20} height={20} alt="checkbox" />
+                  <span>{item?.name}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="content md:hidden block animate-fadeInUp">
             개발자가 필요하신가요?
           </p>
         </div>
       </div>
-      <div className="slider-settings">
+      <div className="slider-settings md:flex hidden w-full">
         <div className="slider-container">
           <Carousel items={sliderData} />
         </div>

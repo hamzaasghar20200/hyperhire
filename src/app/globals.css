@@ -251,9 +251,7 @@ footer p {
   margin-right: 10px;
 }
 .slider-settings {
-  display: flex;
   justify-content: end;
-  width: 100%;
   padding: 0 0px 0px 20px;
 }
 .slider-container {
@@ -268,6 +266,7 @@ footer p {
   font-weight: 900;
   line-height: 21px;
   text-align: left;
+  color: #343741;
 }
 
 .footer-info button {
@@ -352,21 +351,34 @@ footer p {
   min-height: 138px;
   height: 100%;
 }
+.product-by {
+  font-family: Poppins;
+font-size: 13px;
+font-weight: 900;
+line-height: 19.5px;
+text-align: left;
+color: #5E626F;
+}
+.bg-light-blue {
+  background-color: #8BC4FF !important;
+  color: #fff !important;
+}
+.bg-light-green {
+  background-color: #E9F7EF !important;
+}
 @media screen and (min-width: 1800px) {
   .button-slider .flickity-slider {
     left: 107px !important;
   }
 }
-.tooltip-wrapper {
-  position: absolute;
-  top: -70px; /* Adjust as needed to ensure it’s above the card */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10; /* Ensure it’s above other elements */
+.information-list{
+  column-count: 2;
 }
-
 @media screen and (max-width: 767px) {
-  .hero-title{
+  .hero-section{
+    margin: 65px 0px 50px;
+  }
+  .hero-title {
     font-size: 36px;
     max-width: 90%;
   }
@@ -374,5 +386,13 @@ footer p {
     font-size: 18px;
     line-height: 28px;
     max-width: 80%;
+  }
 }
+@media screen and (max-width: 525px) {
+  .info-title, .footer-info-card button {
+    font-size: 12px;
+  }
+  .content {
+    color: #FBFF23;
+  }
 }

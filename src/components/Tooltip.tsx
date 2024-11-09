@@ -8,6 +8,7 @@ interface TooltipProp {
   icon?: string;
   customClass?: string;
   animation?: string;
+  bgColor?: string;
 }
 
 export const Tooltip: React.FC<TooltipProp> = ({
@@ -17,6 +18,7 @@ export const Tooltip: React.FC<TooltipProp> = ({
   icon,
   customClass,
   animation = "animate-slideUp",
+  bgColor = 'bg-white',
 }) => {
   const tooltipPosition = {
     top: "bottom-full mb-2 left-1/2 transform -translate-x-1/2",
@@ -28,7 +30,7 @@ export const Tooltip: React.FC<TooltipProp> = ({
   return (
     <div className={`${customClass} relative inline-block`}>
       <div
-        className={`absolute ${tooltipPosition[position]} flex items-center gap-2 w-[170px] bg-white text-${color} font-bold text-center py-2 px-4 z-10 rounded-lg ${animation}`}
+        className={`absolute ${tooltipPosition[position]} flex items-center gap-2 w-[170px] ${bgColor} text-${color} font-bold text-center py-2 px-4 z-10 rounded-lg ${animation}`}
         style={{ color }}
       >
         {icon && (
@@ -49,7 +51,7 @@ export const Tooltip: React.FC<TooltipProp> = ({
         }}
       >
         <div
-          className={`absolute w-4 h-4 bg-white transform rotate-45`}
+          className={`absolute w-4 h-4 ${bgColor} transform rotate-45`}
           style={{
             [position]: "-21px", // Dynamic positioning for tooltip pointer
             zIndex: -1,

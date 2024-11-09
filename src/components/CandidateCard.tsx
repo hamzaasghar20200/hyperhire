@@ -31,6 +31,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({
             icon="/images/dollar-icon.svg"
             customClass="slider-tooltip"
             animation="fadeIn"
+             bgColor="bg-light-green"
           />
         </div>
       )}
@@ -43,7 +44,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({
           height={120}
         />
         <h5 className="card-title mt-2 mb-0">{name}</h5>
-        <h6 className="card-subtitle mb-5">
+        <h6 className="card-subtitle md:mb-5 mb-2">
           {title} <span className="fw-bold">{experience}</span>
         </h6>
         {skills.map((skill, index) => (

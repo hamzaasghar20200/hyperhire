@@ -30,7 +30,7 @@ const data = [
 ];
 const Footer = () => {
   return (
-    <footer className="bg-light text-dark mt-5 p-4">
+    <footer className="bg-light text-dark mt-5 md:p-4">
       <div className="container">
         <div className="row text-start">
           <div className="col-12 col-md-4 mb-3 mt-4">
@@ -50,7 +50,7 @@ const Footer = () => {
           <div className="col-12 col-md-8 p-0">
             <div className="row mt-3 footer-info mx-0 px-0">
               {data?.map((item) => (
-                <div className="col-md-3 col-6 px-2 mb-3" key={item?.id}>
+                <div className="col-lg-3 col-6 px-2 mb-3" key={item?.id}>
                   <div className="card border-0">
                     <div className="card-body footer-info-card pe-1">
                       <Image
@@ -93,22 +93,22 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-md-4 col-xl-3 col-xxl-2 mb-3">
-              <h5 className="footer-heading font-13">
+              <h5 className="footer-heading font-13 md:mt-0 mt-3">
                 사업자 등록번호 <span>CIN</span>
               </h5>
               <p className="footer-card-desc mt-3 font-13">427-86-01187</p>
-              <p className="footer-card-desc mt-3 font-13">
+              <p className="footer-card-desc mt-2 font-13">
                 U74110DL2016PTC290812
               </p>
             </div>
 
             <div className="col-md-4 col-xl-5 mb-3">
               <div className="ps-xxl-3">
-                <h5 className="footer-heading font-12">주소 ADDRESS</h5>
+                <h5 className="footer-heading font-12 md:mt-0 mt-3">주소 ADDRESS</h5>
                 <p className="footer-card-desc mt-3 font-13">
                   서울특별시 강남대로 479, 지하 1층 238호
                 </p>
-                <p className="footer-card-desc mt-3 font-13">
+                <p className="footer-card-desc mt-2 font-13">
                   D-138, Street number 11, Jagjeet Nagar, North East Delhi, New
                   Delhi, 110053 India
                 </p>
@@ -117,7 +117,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-start">
+        <div className="text-start product-by mt-3">
           <p>© 2023 Hyperhire</p>
         </div>
       </div>

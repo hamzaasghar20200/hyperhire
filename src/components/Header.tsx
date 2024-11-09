@@ -43,7 +43,7 @@ const Header: React.FC = () => {
                 priority
               />
             </div>
-            <div className="hidden sm:ml-6 sm:block m-auto">
+            <div className="hidden sm:ml-6 md:block m-auto">
               <div className="flex space-x-4">
                 <Menu as="div" className="relative ml-3">
                   <div>
@@ -120,7 +120,7 @@ const Header: React.FC = () => {
               문의하기
             </Button>
           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+          <div className="absolute inset-y-0 right-0 flex items-center md:hidden">
             {/* Mobile menu button*/}
             <DisclosureButton className="group relative  border inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="absolute -inset-0.5" />
@@ -138,7 +138,7 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      <DisclosurePanel className="sm:hidden">
+      <DisclosurePanel className="md:hidden">
         <div className="space-y-1 px-3 pb-3 pt-2">
           {navigation.map((item) => (
             <DisclosureButton

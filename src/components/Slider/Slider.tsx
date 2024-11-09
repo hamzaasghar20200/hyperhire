@@ -11,8 +11,10 @@ interface SliderProps {
 
 const Slider: React.FC<SliderProps> = ({
   totalSlides = 8,
-  autoSlideInterval = 3000,
+  // autoSlideInterval = 3000,
 }) => {
+  const isMobile = window.innerWidth <= 768;
+  const isTablet =  window.innerWidth < 1080;
   const [active, setActive] = useState(1);
   const [touchStart, setTouchStart] = useState<number | null>(null);
 
@@ -20,16 +22,15 @@ const Slider: React.FC<SliderProps> = ({
     loadShow();
   }, [active]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, autoSlideInterval);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     nextSlide();
+  //   }, autoSlideInterval);
 
-    return () => clearInterval(interval);
-  }, [active, autoSlideInterval]);
+  //   return () => clearInterval(interval);
+  // }, [active, autoSlideInterval]);
 
   const loadShow = () => {
-    const isMobile = window.innerWidth <= 768;
     const items = document.querySelectorAll(".slider .item");
 
     items.forEach((item) => {
@@ -42,7 +43,7 @@ const Slider: React.FC<SliderProps> = ({
     });
 
     const activeElement = items[active] as HTMLElement;
-    activeElement.style.transform = "none";
+    activeElement.style.transform = "hidden";
     activeElement.style.zIndex = "1";
     activeElement.style.backgroundColor = "#EDFCFF";
     activeElement.classList.add("active");
@@ -53,15 +54,24 @@ const Slider: React.FC<SliderProps> = ({
       .map((item, index) => {
         const element = item as HTMLElement;
         const stt = index + 1;
-        if (isMobile) {
-          element.style.transform = `translateX(${30 * stt}px) scale(${
-            1 - 0.09 * stt
-          })`;
-        } else {
-          element.style.transform = `translateX(${120 * stt}px) scale(${
-            1 - 0.09 * stt
-          })`;
+        switch (true) {
+          case isMobile:
+            element.style.transform = `translateX(${30 * stt}px) scale(${
+              1 - 0.09 * stt
+            })`;
+            break;
+          case isTablet:
+            element.style.transform = `translateX(${50 * stt}px) scale(${
+              1 - 0.09 * stt
+            })`;
+            break;
+          default:
+            element.style.transform = `translateX(${120 * stt}px) scale(${
+              1 - 0.09 * stt
+            })`;
+            break;
         }
+
         element.style.background = "#EDFCFF";
         element.style.zIndex = "0";
         element.style.backgroundColor = "#EDFCFF";
@@ -74,15 +84,24 @@ const Slider: React.FC<SliderProps> = ({
       .map((item, index) => {
         const element = item as HTMLElement;
         const stt = index + 1;
-        if (isMobile) {
-          element.style.transform = `translateX(${-30 * stt}px) scale(${
-            1 - 0.09 * stt
-          })`;
-        } else {
-          element.style.transform = `translateX(${-120 * stt}px) scale(${
-            1 - 0.09 * stt
-          })`;
+        switch (true) {
+          case isMobile:
+            element.style.transform = `translateX(${-30 * stt}px) scale(${
+              1 - 0.09 * stt
+            })`;
+            break;
+          case isTablet:
+            element.style.transform = `translateX(${-50 * stt}px) scale(${
+              1 - 0.09 * stt
+            })`;
+            break;
+          default:
+            element.style.transform = `translateX(${-120 * stt}px) scale(${
+              1 - 0.09 * stt
+            })`;
+            break;
         }
+
         element.style.background = "#EDFCFF";
         element.style.zIndex = "0";
         element.style.backgroundColor = "#EDFCFF";
@@ -108,7 +127,7 @@ const Slider: React.FC<SliderProps> = ({
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (!touchStart) return;
+    if (window.innerWidth > 768 || !touchStart) return;
     const touchEnd = e.touches[0].clientX;
     const touchDiff = touchStart - touchEnd;
 
@@ -146,7 +165,7 @@ const Slider: React.FC<SliderProps> = ({
             />
           </div>
         ))}
-        <Button id="next" classnames="md:block none" onClick={nextSlide}>
+        <Button id="next" classnames="md:block hidden" onClick={nextSlide}>
           <svg fill="#ffffff" height="32px" width="32px" viewBox="0 0 330 330">
             <path
               d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 
@@ -156,7 +175,7 @@ const Slider: React.FC<SliderProps> = ({
             />
           </svg>
         </Button>
-        <Button id="prev" classnames="md:block none" onClick={prevSlide}>
+        <Button id="prev" classnames="md:block hidden" onClick={prevSlide}>
           <svg
             fill="#ffffff"
             height="32px"
