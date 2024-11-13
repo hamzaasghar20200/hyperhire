@@ -30,7 +30,7 @@ const data = [
 ];
 const Footer = () => {
   return (
-    <footer className="bg-light text-dark mt-5 md:p-4">
+    <footer className="bg-light text-dark mt-7 md:p-4">
       <div className="container">
         <div className="row text-start">
           <div className="col-12 col-md-4 mb-3 mt-4">

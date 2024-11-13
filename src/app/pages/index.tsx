@@ -8,7 +8,6 @@ const Home: NextPage = () => {
     <div className="main-section">
       <Header />
       <HeroSection />
-      
       <Footer />
     </div>
   );
